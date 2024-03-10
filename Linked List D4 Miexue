@@ -56,7 +56,6 @@ def main():
 
         print("\n1. Masukkan menu yang anda ingin pesan")
         print("2. Tampilkan pesanan yang telah di pilih")
-        print("2. Tampilkan pesanan yang telah di pilih")
         print("3. Jumlah Harga yang dibayarkan")
         print("4. Keluar")
 
