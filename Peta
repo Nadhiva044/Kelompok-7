@@ -41,8 +41,10 @@ class Peta:
             self.cityList[kota1].remove(kota2)
             return True
         return False
-        
+
+
 petaJatim = Peta()
+
 petaJatim.tambahkanKota("Surabaya")
 petaJatim.tambahkanKota("sidoarjo")
 petaJatim.tambahkanKota("Malang")
