@@ -42,9 +42,7 @@ class Peta:
             return True
         return False
         
-
 petaJatim = Peta()
-
 petaJatim.tambahkanKota("Surabaya")
 petaJatim.tambahkanKota("sidoarjo")
 petaJatim.tambahkanKota("Malang")
