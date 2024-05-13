@@ -31,3 +31,38 @@ class Peta:
     def hapusJalan(self, kota1, kota2):
         if kota1 in self.cityList and kota2 in self.cityList:
             if kota2 in self.cityList[kota1] and kota1 in self.cityList[kota2]:
+                del self.cityList[kota1][kota2]
+                del self.cityList[kota2][kota1]
+                return True
+            else:
+                print("Jalan tidak ditemukan.")
+        return False
+
+    def djikstra(self, source):
+        distance = {}
+        for city in self.cityList:
+            distance[city] = float('inf')
+        distance[source] = 0
+        unvisited_cities = list(self.cityList.keys())
+        while unvisited_cities:
+            min_distance = float('inf')
+            closest_city = None
+            for city in unvisited_cities:
+                if distance[city] < min_distance:
+                    min_distance = distance[city]
+                    closest_city = city
+            unvisited_cities.remove(closest_city)
+            for neighbor, jarak in self.cityList[closest_city].items():
+                jarakNeighbor = distance[closest_city] + jarak
+                if jarakNeighbor < distance[neighbor]:
+                    distance[neighbor] = jarakNeighbor
+        return distance
+
+petaJatim = Peta()
+
+petaJatim.tambahkanKota("Surabaya")
+petaJatim.tambahkanKota("Sidoarjo")
+petaJatim.tambahkanKota("Malang")
+petaJatim.tambahkanKota("Kota Mojokerto")
+petaJatim.tambahkanKota("Blitar")
+petaJatim.tambahkanKota("Tulungagung")
