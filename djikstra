@@ -28,7 +28,6 @@ class Peta:
             return True
         return False
 
-
     def hapusJalan(self, kota1, kota2):
         if kota1 in self.cityList and kota2 in self.cityList:
             if kota2 in self.cityList[kota1] and kota1 in self.cityList[kota2]:
